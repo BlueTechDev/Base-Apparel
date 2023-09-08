@@ -1,0 +1,113 @@
+/* Common styles for both desktop and mobile */
+html body {
+    background-image: url(/images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    display: flex; /* Make the body a flex container */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 100vh; /* Make sure the container covers the full viewport height */
+}
+
+/* ... (your other styles) ... */
+
+
+.pink-text {
+    color: #dcbcc0;
+}
+
+.black-text {
+    color: black;
+}
+
+/* Desktop layout styles */
+.card {
+    display: flex;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 1000px;
+    max-height: 1000px;
+    margin: 0 auto;
+}
+
+/* Logo image style */
+.logo-img {
+    padding: 50px;
+    max-width: 355px; /* Adjust the size for desktop */
+    height: 25px; /* Maintain the aspect ratio */
+    margin-right: 20px; /* Add spacing between logo and left-side content */
+}
+
+.left-side {
+    flex: 1;
+    border-radius: 8px 0 0 8px;
+    padding: 2rem;
+}
+
+.right-side {
+    flex: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 0 8px 8px 0;
+}
+
+.right-side img {
+    width: 100%;
+    height: 100%;
+}
+
+#email-btn {
+    width: 100%;
+    background-color: transparent;
+    border: .5px solid #efe2e5;
+    border-radius: 24px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: transparent;
+}
+
+#email-btn p {
+    margin: 0;
+    opacity: .1;
+    width: auto;
+    text-align: start;
+}
+
+#email-btn img {
+    background-color: #f49596;
+    padding: 5px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+
+/* Mobile layout styles */
+@media screen and (max-width: 768px) {
+    .card {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        max-width: 60%;
+    }
+
+    .logo-img {
+        order: 1;
+        max-width: 50%; /* Adjust the size for mobile */
+        height:auto;
+        padding: 25px;
+    }
+
+    .right-side {
+        order: 2; /* Change the order to 3 to move right-side below left-side */
+        border-radius: 0 0 8px 8px; /* Adjust border radius for bottom corners */
+    }
+
+    .left-side {
+        order: 3; /* Change the order to 2 to move left-side above right-side */
+        border-radius: 8px 8px 0 0; /* Adjust border radius for top corners */
+        padding: 1rem;
+    }
+}
+
+
